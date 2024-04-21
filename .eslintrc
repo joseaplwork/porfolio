@@ -1,0 +1,17 @@
+{
+  "extends": [
+    "next/core-web-vitals",
+    "next",
+    "airbnb",
+    "airbnb-typescript",
+    "google",
+    "prettier"
+  ],
+  "rules": {
+    "react/react-in-jsx-scope": "off",
+    "require-jsdoc": "off"
+  },
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  }
+}

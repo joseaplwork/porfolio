@@ -6,7 +6,7 @@ import IconBack from './ui/icon-back.component';
 export default function Portfolio() {
   return (
     <main className="flex h-[100dvh] lg:items-center justify-center">
-      <div className='className="lg:container mx-auto px-8 py-6"'>
+      <div className='lg:container mx-auto px-8 py-6"'>
         <div className="flex gap-5 items-center justify-center">
           <Link href="/">
             <IconBack size={35} />
@@ -16,42 +16,36 @@ export default function Portfolio() {
         <div className="grid justify-between items-center pb-10 gap-10 lg:grid-cols-3">
           <Card
             title="My title"
-            date="12.02.23"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ab? Nesciunt atque perspiciatis et eius repellat quia laboriosam odit natus nostrum reiciendis quae saepe, dicta in eum provident ipsum libero?"
             demoLink="https://example.com"
             codeLink="https://example.com"
           />
           <Card
             title="My title"
-            date="12.02.23"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ab? Nesciunt atque perspiciatis et eius repellat quia laboriosam odit natus nostrum reiciendis quae saepe, dicta in eum provident ipsum libero?"
             demoLink="https://example.com"
             codeLink="https://example.com"
           />
           <Card
             title="My title"
-            date="12.02.23"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ab? Nesciunt atque perspiciatis et eius repellat quia laboriosam odit natus nostrum reiciendis quae saepe, dicta in eum provident ipsum libero?"
             demoLink="https://example.com"
             codeLink="https://example.com"
           />
           <Card
             title="My title"
-            date="12.02.23"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ab? Nesciunt atque perspiciatis et eius repellat quia laboriosam odit natus nostrum reiciendis quae saepe, dicta in eum provident ipsum libero?"
             demoLink="https://example.com"
             codeLink="https://example.com"
           />
           <Card
             title="My title"
-            date="12.02.23"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ab? Nesciunt atque perspiciatis et eius repellat quia laboriosam odit natus nostrum reiciendis quae saepe, dicta in eum provident ipsum libero?"
             demoLink="https://example.com"
             codeLink="https://example.com"
           />
           <Card
             title="My title"
-            date="12.02.23"
             description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus, ab? Nesciunt atque perspiciatis et eius repellat quia laboriosam odit natus nostrum reiciendis quae saepe, dicta in eum provident ipsum libero?"
             demoLink="https://example.com"
             codeLink="https://example.com"

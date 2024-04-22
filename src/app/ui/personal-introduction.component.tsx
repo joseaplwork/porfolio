@@ -1,6 +1,6 @@
 import { VT323 } from 'next/font/google';
 
-import ProjectsLink from './project-link.component';
+import PersonalLinks from './personal-links.component';
 import SocialLinks from './social-links.component';
 
 import './personal-introduction.component.css';
@@ -19,7 +19,7 @@ export default function PersonalIntroduction() {
         I love creating innovative solutions and pushing the boundaries of
         technology.
       </p>
-      <ProjectsLink />
+      <PersonalLinks />
       <SocialLinks />
     </section>
   );

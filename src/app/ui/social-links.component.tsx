@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import IconCodePen from './icon-codepen.component';
 import IconGithub from './icon-github.component';
 import IconLinkedin from './icon-linkedin.component';
@@ -25,15 +27,15 @@ export default function SocialLinks() {
   return (
     <div className="flex gap-3">
       {socialLinks.map((link) => (
-        <a
+        <Link
           key={link.label}
-          href={link.href}
+          href={link.href || '/'}
           target="_blank"
           rel="noreferrer"
           aria-label={link.label}
         >
           <link.Icon />
-        </a>
+        </Link>
       ))}
     </div>
   );

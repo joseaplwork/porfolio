@@ -9,14 +9,14 @@ export default function PersonalLinks() {
       >
         See projects
       </Link>
-      <a
+      <Link
         className="underline font-bold inline-block mb-5 text-l"
-        href={process.env.CV_LINK}
+        href={process.env.CV_LINK || ''}
         target="_blank"
         rel="noreferrer"
       >
         Download CV
-      </a>
+      </Link>
     </p>
   );
 }

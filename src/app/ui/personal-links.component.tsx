@@ -11,7 +11,7 @@ export default function PersonalLinks() {
       </Link>
       <Link
         className="underline font-bold inline-block mb-5 text-l"
-        href={process.env.CV_LINK || ''}
+        href={process.env.CV_LINK || '/'}
         target="_blank"
         rel="noreferrer"
       >

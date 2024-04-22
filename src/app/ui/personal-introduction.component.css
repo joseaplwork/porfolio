@@ -1,11 +1,11 @@
 .typewrite::before {
-  content: "";
+  content: '';
   animation: typing 2.5s steps(20) forwards;
 }
 
 .typewrite::after {
-  content: "";
-  border-right: 1px solid var(--fg-color);
+  content: '';
+  border-right: 1px solid var(--primary-color);
   animation: blink 1s linear infinite;
 }
 
@@ -18,19 +18,19 @@
 
 @keyframes typing {
   0% {
-    content: "";
+    content: '';
   }
   5% {
-    content: "H";
+    content: 'H';
   }
   10% {
-    content: "Hi";
+    content: 'Hi';
   }
   15% {
-    content: "Hi!";
+    content: 'Hi!';
   }
   20% {
-    content: "Hi! I";
+    content: 'Hi! I';
   }
   25% {
     content: "Hi! I'";

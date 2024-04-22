@@ -3,13 +3,15 @@
 @tailwind utilities;
 
 :root {
-  --fg-color: rgb(83 83 83);
+  --primary-color: rgb(83 83 83);
+  --secondary-color: rgb(110 110 110);
   --bg-color: #c08f40;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fg-color: rgb(200, 200, 200);
+    --primary-color: rgb(200 200 200);
+    --secondary-color: rgb(150 150 150);
     --bg-color: #1f6356;
   }
 }
@@ -21,6 +23,6 @@ body {
 }
 
 body {
-  color: var(--fg-color);
+  color: var(--primary-color);
   background-color: var(--bg-color);
 }

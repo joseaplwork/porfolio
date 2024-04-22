@@ -1,7 +1,7 @@
-import IconCodePen from '@ui/icon-codepen.component';
-import IconGithub from '@ui/icon-github.component';
-import IconLinkedin from '@ui/icon-linkedin.component';
-import IconStackOverflow from '@ui/icon-stackoverflow.component';
+import IconCodePen from './icon-codepen.component';
+import IconGithub from './icon-github.component';
+import IconLinkedin from './icon-linkedin.component';
+import IconStackOverflow from './icon-stackoverflow.component';
 
 export default function SocialLinks() {
   const {

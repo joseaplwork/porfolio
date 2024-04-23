@@ -1,4 +1,4 @@
-import PersonalIntroduction from './ui/personal-introduction.component';
+import PersonalIntroduction from './ui/personal-introduction';
 
 export default function Home() {
   return (

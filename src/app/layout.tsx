@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 // eslint-disable-next-line camelcase
 import { Space_Mono } from 'next/font/google';
 
-import PageBackground from './ui/page-background.component';
+import PageBackground from './ui/page-background';
 
 import './globals.css';
 

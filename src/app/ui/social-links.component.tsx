@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
-import IconCodePen from './icon-codepen.component';
-import IconGithub from './icon-github.component';
-import IconLinkedin from './icon-linkedin.component';
-import IconStackOverflow from './icon-stackoverflow.component';
+import IconCodePen from './icon-codepen';
+import IconGithub from './icon-github';
+import IconLinkedin from './icon-linkedin';
+import IconStackOverflow from './icon-stackoverflow';
 
 export default function SocialLinks() {
   const {

@@ -1,5 +1,5 @@
-import { ProjectsResponse } from '../interfaces/projects-response.interface';
-import { Projects } from '../model/projects.model';
+import { ProjectsResponse } from '../interfaces/projects-response';
+import { Projects } from '../model/projects';
 
 export default async function fetchProjects(): Promise<Projects[]> {
   const projectsSource = process.env.PROJECTS_SOURCE;

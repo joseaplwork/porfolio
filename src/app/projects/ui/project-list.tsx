@@ -1,6 +1,6 @@
-import { Projects } from '../model/projects.model';
+import { Projects } from '../model/projects';
 
-import Card from './card.component';
+import Card from './card';
 
 interface Props {
   projects: Projects[];

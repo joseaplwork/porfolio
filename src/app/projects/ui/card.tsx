@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import Chip from './chip.component';
+import Chip from './chip';
 
 interface Props {
   title: string;

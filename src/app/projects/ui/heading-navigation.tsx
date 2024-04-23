@@ -1,6 +1,6 @@
 import Link from 'next/link';
 
-import IconBack from './icon-back.component';
+import IconBack from './icon-back';
 
 export default function HeadingNavigation() {
   return (

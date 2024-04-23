@@ -1,4 +1,4 @@
-import { Projects } from '../model/projects.model';
+import { Projects } from '../model/projects';
 
 export interface ProjectsResponse {
   projects: Projects[];

@@ -19,6 +19,7 @@
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
     "declaration": true,
+    "target":"ES2022",
     "plugins": [{ "name": "next" }],
     "isolatedModules": true,
     "paths": {

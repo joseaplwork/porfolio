@@ -1,9 +1,9 @@
 import { VT323 } from 'next/font/google';
 
-import PersonalLinks from './personal-links.component';
+import PersonalLinks from './personal-links';
 import SocialLinks from './social-links.component';
 
-import './personal-introduction.component.css';
+import './personal-introduction.css';
 
 const vt323 = VT323({ weight: ['400'], subsets: ['latin'] });
 

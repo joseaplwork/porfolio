@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 // eslint-disable-next-line camelcase
 import { Space_Mono } from 'next/font/google';
-import { ReactNode } from 'react';
 
-import PageBackground from './ui/page-background.component';
+import PageBackground from './ui/page-background';
 
 import './globals.css';
 
@@ -14,9 +13,11 @@ export const metadata: Metadata = {
 
 const spaceMono = Space_Mono({ weight: ['400', '700'], subsets: ['latin'] });
 
-export default function RootLayout({
-  children,
-}: Readonly<{ children: ReactNode }>) {
+interface Props {
+  children: React.ReactNode;
+}
+
+export default function RootLayout({ children }: Props) {
   return (
     <html lang="en">
       <body className={spaceMono.className}>

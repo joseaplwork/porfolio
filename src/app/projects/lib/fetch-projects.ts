@@ -8,8 +8,10 @@ export default async function fetchProjects(): Promise<Projects[]> {
     throw new Error('PROJECTS_SOURCE environment variable is not defined.');
   }
 
-  const resp = await fetch(projectsSource);
-  const { projects }: ProjectsResponse = await resp.json();
+  const response = await fetch(projectsSource, {
+    headers: { 'Content-Type': 'application/json', cache: 'no-store' },
+  });
+  const { projects }: ProjectsResponse = await response.json();
 
   return projects;
 }

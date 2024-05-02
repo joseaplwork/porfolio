@@ -1,4 +1,7 @@
-import { Root } from '@/lib/feature-flag-providers/generated-hypertune';
+import {
+  EnvironmentEnumValues,
+  Root,
+} from '@/lib/feature-flag-providers/generated-hypertune';
 import hypertune from '@/lib/feature-flag-providers/hypertune';
 
 export default async function getFeatureFlags(): Promise<
@@ -9,7 +12,7 @@ export default async function getFeatureFlags(): Promise<
   const rootNode = hypertune.root({
     args: {
       context: {
-        environment: 'DEVELOPMENT',
+        environment: process.env.NODE_ENV.toUpperCase() as any,
         user: {
           id: '1',
           name: 'Jose Paredes Leon',

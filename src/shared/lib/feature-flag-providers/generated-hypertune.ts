@@ -72,7 +72,8 @@ export type Rec4 = {
 export const EnvironmentEnumValues = [
   "DEVELOPMENT",
   "STAGING",
-  "PRODUCTION"
+  "PRODUCTION",
+  "TEST"
 ] as const;
 export type Environment = typeof EnvironmentEnumValues[number];
 

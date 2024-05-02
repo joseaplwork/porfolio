@@ -7,7 +7,13 @@ import './personal-introduction.css';
 
 const vt323 = VT323({ weight: ['400'], subsets: ['latin'] });
 
-export default function PersonalIntroduction() {
+interface Props {
+  shouldShowProjectsLink: boolean;
+}
+
+export default function PersonalIntroduction({
+  shouldShowProjectsLink,
+}: Props) {
   return (
     <section className="p-7 lg:pl-40 dark:text-stale-50">
       <div
@@ -19,7 +25,7 @@ export default function PersonalIntroduction() {
         I love creating innovative solutions and pushing the boundaries of
         technology.
       </p>
-      <PersonalLinks />
+      <PersonalLinks shouldShowProjectsLink={shouldShowProjectsLink} />
       <SocialLinks />
     </section>
   );

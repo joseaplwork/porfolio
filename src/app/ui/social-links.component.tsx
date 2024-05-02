@@ -21,7 +21,11 @@ export default function SocialLinks() {
       href: SOCIAL_LINK_STACKOVERFLOW,
       Icon: IconStackOverflow,
     },
-    { label: 'codepen', href: SOCIAL_LINK_CODEPEN, Icon: IconCodePen },
+    {
+      label: 'codepen',
+      href: SOCIAL_LINK_CODEPEN,
+      Icon: IconCodePen,
+    },
   ];
 
   return (

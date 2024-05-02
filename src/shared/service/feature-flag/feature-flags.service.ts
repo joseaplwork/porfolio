@@ -1,7 +1,4 @@
-import {
-  EnvironmentEnumValues,
-  Root,
-} from '@/lib/feature-flag-providers/generated-hypertune';
+import { Root } from '@/lib/feature-flag-providers/generated-hypertune';
 import hypertune from '@/lib/feature-flag-providers/hypertune';
 
 export default async function getFeatureFlags(): Promise<

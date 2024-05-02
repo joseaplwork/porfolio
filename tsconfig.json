@@ -23,7 +23,9 @@
     "plugins": [{ "name": "next" }],
     "isolatedModules": true,
     "paths": {
-      "@ui/*": ["./src/shared/ui/*"]
+      "@\/ui/*": ["./src/shared/ui/*"],
+      "@\/lib/*": ["./src/shared/lib/*"],
+      "@\/service/*": ["./src/shared/service/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],

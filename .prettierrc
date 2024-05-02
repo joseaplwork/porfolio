@@ -6,7 +6,7 @@
   "singleQuote": true,
   "semi": true,
   "useTabs": false,
-  "importOrder": ["^@ui/(.*)$", "^../", "^[./].*(?<!\\.(c|le|sc)ss)$", "\\.(c|le|sc)ss$", "^./"],
+  "importOrder": ["^@\/(.*)$", "^../", "^[./].*(?<!\\.(c|le|sc)ss)$", "\\.(c|le|sc)ss$", "^./"],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

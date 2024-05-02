@@ -8,8 +8,9 @@
     "prettier"
   ],
   "rules": {
+    "require-jsdoc": "off",
     "react/react-in-jsx-scope": "off",
-    "require-jsdoc": "off"
+    "import/extensions": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"

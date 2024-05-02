@@ -1,14 +1,20 @@
 import Link from 'next/link';
 
-export default function PersonalLinks() {
+interface Props {
+  shouldShowProjectsLink: boolean;
+}
+
+export default async function PersonalLinks({ shouldShowProjectsLink }: Props) {
   return (
     <p>
-      {/* <Link
-        className="underline font-bold inline-block mb-5 text-l mr-5"
-        href="projects"
-      >
-        See projects
-      </Link> */}
+      {shouldShowProjectsLink && (
+        <Link
+          className="underline font-bold inline-block mb-5 text-l mr-5"
+          href="projects"
+        >
+          See projects
+        </Link>
+      )}
       <Link
         className="underline font-bold inline-block mb-5 text-l"
         href={process.env.CV_LINK || '/'}

@@ -1,7 +1,11 @@
+// eslint-disable-next-line camelcase
+import { unstable_noStore } from 'next/cache';
+
 import { ProjectsResponse } from '../interfaces/projects-response';
 import { Projects } from '../model/projects';
 
 export default async function fetchProjects(): Promise<Projects[]> {
+  unstable_noStore();
   const projectsSource = process.env.PROJECTS_SOURCE;
 
   if (!projectsSource) {

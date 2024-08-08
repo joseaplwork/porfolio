@@ -1,5 +1,5 @@
 import { FeatureFlagProvider, FeatureFlags } from '@/shared/interfaces';
-import JsonSiloProvider from '@/shared/lib/feature-flag-providers/jsonsilo-provider';
+import { HypertuneProvider } from '@/shared/lib/feature-flag-providers/hypertune-provider';
 
 class FeatureFlagService {
   isInitialized = false;
@@ -27,4 +27,4 @@ class FeatureFlagService {
   }
 }
 
-export default new FeatureFlagService(new JsonSiloProvider());
+export default new FeatureFlagService(new HypertuneProvider());

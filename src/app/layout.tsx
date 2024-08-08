@@ -1,3 +1,4 @@
+import { VercelToolbar } from '@vercel/toolbar/next';
 import type { Metadata } from 'next';
 // eslint-disable-next-line camelcase
 import { Space_Mono } from 'next/font/google';
@@ -23,6 +24,7 @@ export default function RootLayout({ children }: Props) {
       <body className={spaceMono.className}>
         <PageBackground />
         {children}
+        <VercelToolbar />
       </body>
     </html>
   );

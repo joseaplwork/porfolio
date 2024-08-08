@@ -11,9 +11,11 @@
     "require-jsdoc": "off",
     "react/react-in-jsx-scope": "off",
     "import/extensions": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "import/no-extraneous-dependencies": "off"
   },
   "parserOptions": {
     "project": "./tsconfig.json"
-  }
+  },
+  "ignorePatterns": ["next.config.mjs"]
 }

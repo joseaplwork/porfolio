@@ -25,6 +25,6 @@ test('feature flag service remains server-only and provider-backed', () => {
 
   assert.match(service, /import 'server-only';/);
   assert.match(service, /FeatureFlagProvider/);
-  assert.match(service, /createProvider/);
   assert.match(service, /FEATURE_FLAGS_PROVIDER/);
+  assert.match(service, /new FeatureFlag\(/);
 });

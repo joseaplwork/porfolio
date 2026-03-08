@@ -7,9 +7,9 @@ Do not edit manually.
 
 ### feature-flags
 
-- Public API exports: FeatureFlagName, FeatureFlagProvider, FeatureFlagSnapshot, featureFlags
+- Public API exports: FeatureFlagName, FeatureFlagProvider, featureFlags, FeatureFlagSnapshot
 - Contract exports: FEATURE_FLAGS, FeatureFlagName, FeatureFlagProvider, FeatureFlagSnapshot
-- Internal/external dependencies: @/shared/config/env.server, @/shared/lib/hypertune-auto-generated/hypertune, @/shared/lib/hypertune-auto-generated/hypertune.vercel, @vercel/edge-config, hypertune, next/cache, next/dist/server/web/spec-extension/adapters/headers, next/dist/server/web/spec-extension/adapters/request-cookies
+- Internal/external dependencies: @/shared/config/env.server, @/shared/lib/hypertune-auto-generated/hypertune, @/shared/lib/hypertune-auto-generated/hypertune.vercel, @vercel/edge-config, hypertune, next/cache
 - Route ownership: / (src/app/(site)/page.tsx)
 
 ### profile

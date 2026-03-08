@@ -73,27 +73,60 @@ function checkServerOnlyBoundary(filePath, content) {
 }
 
 function checkFeatureImportBoundary(filePath, importSpecifier) {
-  if (!importSpecifier.startsWith(FEATURE_PREFIX)) {
+  const importerFeature = detectFeatureName(filePath);
+
+  if (importSpecifier.startsWith(FEATURE_PREFIX)) {
+    const relativeFeaturePath = importSpecifier.slice(FEATURE_PREFIX.length);
+    const segments = relativeFeaturePath.split('/');
+    const importedFeature = segments[0];
+    const importedSubpath = segments.slice(1).join('/');
+
+    if (!importedFeature) {
+      return;
+    }
+
+    if (!ALLOWED_PUBLIC_SUBPATHS.has(importedSubpath)) {
+      if (importerFeature !== importedFeature) {
+        violations.push(
+          `${path.relative(ROOT, filePath)}: illegal deep import '${importSpecifier}'. Use '@/features/${importedFeature}' or '@/features/${importedFeature}/contracts'.`,
+        );
+      }
+    }
+
     return;
   }
 
-  const importerFeature = detectFeatureName(filePath);
-  const relativeFeaturePath = importSpecifier.slice(FEATURE_PREFIX.length);
-  const segments = relativeFeaturePath.split('/');
-  const importedFeature = segments[0];
-  const importedSubpath = segments.slice(1).join('/');
+  if (!importSpecifier.startsWith('.')) {
+    return;
+  }
 
-  if (!importedFeature) {
+  const resolvedImportPath = path.resolve(path.dirname(filePath), importSpecifier);
+  const normalizedImportPath = resolvedImportPath.replaceAll(path.sep, '/');
+  const featureImportMatch = normalizedImportPath.match(
+    /\/src\/features\/([^/]+)(?:\/(.*))?$/,
+  );
+
+  if (!featureImportMatch) {
+    return;
+  }
+
+  const importedFeature = featureImportMatch[1];
+  const importedSubpath = featureImportMatch[2] || '';
+
+  if (importerFeature === importedFeature) {
     return;
   }
 
   if (!ALLOWED_PUBLIC_SUBPATHS.has(importedSubpath)) {
-    if (importerFeature !== importedFeature) {
-      violations.push(
-        `${path.relative(ROOT, filePath)}: illegal deep import '${importSpecifier}'. Use '@/features/${importedFeature}' or '@/features/${importedFeature}/contracts'.`,
-      );
-    }
+    violations.push(
+      `${path.relative(ROOT, filePath)}: illegal relative deep import '${importSpecifier}' into feature '${importedFeature}'. Use '@/features/${importedFeature}' or '@/features/${importedFeature}/contracts'.`,
+    );
+    return;
   }
+
+  violations.push(
+    `${path.relative(ROOT, filePath)}: illegal relative cross-feature import '${importSpecifier}'. Use '@/features/${importedFeature}' or '@/features/${importedFeature}/contracts'.`,
+  );
 }
 
 function main() {

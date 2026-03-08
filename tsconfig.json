@@ -22,7 +22,10 @@
     "target":"ES2022",
     "plugins": [{ "name": "next" }],
     "isolatedModules": true,
+    "baseUrl": ".",
     "paths": {
+      "@/features/*": ["./src/features/*"],
+      "@/entities/*": ["./src/entities/*"],
       "@/shared/*": ["./src/shared/*"]
     }
   },

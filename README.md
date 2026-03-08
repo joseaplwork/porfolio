@@ -1,17 +1,60 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portfolio (AI-First Next.js Baseline)
 
-## Getting Started
+This repository is structured as an AI-ready Next.js App Router baseline with strict feature boundaries, generated context artifacts, and merge-time quality gates.
 
-First, run the development server:
+## Architecture
+- `src/app`: route composition only.
+- `src/features`: feature slices with public APIs (`index.ts`, `contracts.ts`).
+- `src/entities`: cross-feature entity contracts.
+- `src/shared`: cross-cutting code only.
 
+## Core commands
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run lint:boundaries
+npm run typecheck
+npm run test
+npm run test:e2e:smoke
+npm run context:update
+npm run context:check
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## AI context files
+- `AGENTS.md`
+- `docs/ai/system-context.md`
+- `docs/ai/domain-map.yaml`
+- `docs/ai/coding-rules.md`
+- `docs/ai/context-index.generated.md` (generated)
+
+## Feature contract policy
+Every feature under `src/features/<feature>` must include:
+- `index.ts`
+- `contracts.ts`
+- `README.md` with required sections:
+  - Purpose
+  - Public API
+  - Data Contracts
+  - Dependencies
+  - Invariants
+  - Change Checklist
+
+## PR description policy
+Use `.github/pull_request_template.md` and always document 3 review layers:
+1. Functional
+2. Technical
+3. Behavioral
+
+## Scaffolding a feature
+```bash
+npm run scaffold:feature -- <feature-name>
+```
+
+## CI gates
+CI blocks merges unless all of the following pass:
+- lint
+- boundary checks
+- typecheck
+- tests
+- e2e smoke tests
+- context sync check

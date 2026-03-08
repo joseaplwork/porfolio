@@ -1,0 +1,37 @@
+system: portfolio-ai-ready-baseline
+runtime: nextjs-app-router
+
+bounded_contexts:
+  projects:
+    responsibilities:
+      - ingest external project feed
+      - validate and normalize project payload
+      - render projects route experience
+    depends_on:
+      - entities.project
+      - shared.config
+
+  feature_flags:
+    responsibilities:
+      - resolve feature flags from provider
+      - expose stable in-process flag service API
+    depends_on:
+      - shared.config
+      - shared.lib.hypertune_auto_generated
+
+  profile:
+    responsibilities:
+      - render home introduction and social/cv links
+    depends_on: []
+
+entities:
+  project:
+    fields: [name, description, demoLink, sourceLink, tags]
+  user:
+    fields: [id, name, email]
+  enrollment:
+    fields: [userId, courseId, status]
+
+routes:
+  '/': profile + feature_flags
+  '/projects': projects

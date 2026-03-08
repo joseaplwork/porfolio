@@ -1,0 +1,42 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  quality-gates:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Boundary checks
+        run: npm run lint:boundaries
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Unit, integration, and structure tests
+        run: npm run test
+
+      - name: E2E smoke tests
+        run: npm run test:e2e:smoke
+
+      - name: Context sync check
+        run: npm run context:check

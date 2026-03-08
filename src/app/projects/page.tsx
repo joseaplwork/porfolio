@@ -1,14 +1,3 @@
-import fetchProjects from './lib/fetch-projects';
-import HeadingNavigation from './ui/heading-navigation';
-import ProjectList from './ui/project-list';
+import { ProjectsPage } from '@/features/projects';
 
-export default async function Portfolio() {
-  const projects = await fetchProjects();
-
-  return (
-    <>
-      <HeadingNavigation />
-      <ProjectList projects={projects} />
-    </>
-  );
-}
+export default ProjectsPage;

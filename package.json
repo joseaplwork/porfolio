@@ -7,6 +7,17 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "lint:boundaries": "node scripts/ai/check-boundaries.mjs",
+    "context:update": "node scripts/ai/generate-context-index.mjs",
+    "context:check": "node scripts/ai/check-context-sync.mjs",
+    "test:unit": "node --test src/features/projects/tests/*.test.mjs src/features/feature-flags/tests/*.test.mjs src/features/profile/tests/*.test.mjs",
+    "test:integration": "node --test tests/integration/*.test.mjs",
+    "test:structure": "node --test tests/structure/*.test.mjs tests/context/*.test.mjs",
+    "test:e2e:smoke": "node scripts/testing/e2e-smoke.mjs",
+    "test": "npm run test:unit && npm run test:integration && npm run test:structure",
+    "scaffold:feature": "node scripts/scaffold/feature.mjs",
+    "ci:check": "npm run lint && npm run lint:boundaries && npm run typecheck && npm run test && npm run test:e2e:smoke && npm run context:check",
     "generate:feature-flags": "npx hypertune"
   },
   "dependencies": {

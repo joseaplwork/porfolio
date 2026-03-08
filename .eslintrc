@@ -12,10 +12,32 @@
     "react/react-in-jsx-scope": "off",
     "import/extensions": "off",
     "no-underscore-dangle": "off",
-    "import/no-extraneous-dependencies": "off"
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off",
+    "no-restricted-imports": [
+      "error",
+      {
+        "patterns": [
+          {
+            "group": [
+              "@/features/*/model/*",
+              "@/features/*/server/*",
+              "@/features/*/ui/*",
+              "@/features/*/tests/*"
+            ],
+            "message": "Import feature public APIs only via '@/features/<feature>' or '@/features/<feature>/contracts'."
+          }
+        ]
+      }
+    ]
   },
   "parserOptions": {
     "project": "./tsconfig.json"
   },
-  "ignorePatterns": ["next.config.mjs"]
+  "ignorePatterns": [
+    "next.config.mjs",
+    "**/*.test.mjs",
+    "tests/**/*.mjs",
+    "scripts/**/*.mjs"
+  ]
 }

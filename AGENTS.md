@@ -16,6 +16,16 @@ Maintain a feature-first Next.js codebase where AI can generate predictable code
 4. Run `npm run context:update`.
 5. Run `npm run context:check`, `npm run lint`, `npm run lint:boundaries`, `npm run typecheck`, and `npm run test`.
 
+## Pull request authoring standard
+All PRs must follow the 3-layer description format in `.github/pull_request_template.md`.
+
+Required layers (in order):
+1. Functional: user/product outcome, scope, acceptance criteria.
+2. Technical: implementation approach, key changes, interfaces/contracts, compatibility.
+3. Behavioral: before vs after runtime behavior, edge cases/failure modes, risks/mitigations.
+
+When Codex creates a PR with `gh pr create` or `gh pr edit`, it must include all 3 layers explicitly.
+
 ## Architecture constraints
 - App route files import features only via `@/features/<feature>` or `@/features/<feature>/contracts`.
 - Deep cross-feature imports are forbidden.

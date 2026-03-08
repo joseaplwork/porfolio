@@ -39,6 +39,12 @@ Every feature under `src/features/<feature>` must include:
   - Invariants
   - Change Checklist
 
+## PR description policy
+Use `.github/pull_request_template.md` and always document 3 review layers:
+1. Functional
+2. Technical
+3. Behavioral
+
 ## Scaffolding a feature
 ```bash
 npm run scaffold:feature -- <feature-name>

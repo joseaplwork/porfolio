@@ -19,3 +19,11 @@
 ## Context synchronization
 - Run `npm run context:update` after feature export, route ownership, or dependency changes.
 - `npm run context:check` must pass before merge.
+
+## Pull request description policy
+PR descriptions are required to follow a 3-layer review structure:
+1. Functional layer: user/product outcome, scope, acceptance criteria.
+2. Technical layer: implementation approach, key changes, interfaces/contracts, compatibility/migration.
+3. Behavioral layer: runtime behavior changes, edge cases/failure modes, risks/mitigations.
+
+Use `.github/pull_request_template.md` as the canonical PR description format.
